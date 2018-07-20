@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "ScarySounds",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "scarysounds.png",
+    "default_title": "ScarySounds",
+    "default_popup": "popup.html"
+  },
+  "permissions" : [ "tabs", "http://*/*", "https://*/*", "storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["jquery.js", "index.js"]
+    }
+  ],
+  "options_page": "options.html",
+  "web_accessible_resources": ["/sounds/mette-reverse.wav","/sounds/mette-man.wav","/sounds/mette-drowning.wav","/sounds/mette-alien.wav","/sounds/mette.wav"]
+}
